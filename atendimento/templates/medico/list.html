@@ -1,19 +1,28 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
+
+
       
     <table class="table">
         <tr>
+            <th>ID</th>
             <th>CRM</th>
             <th>Nome</th>
             <th>Especialidade</th>
+            <th>Idade</th>
         </tr>
+        {% for medico in medicos %}
         <tr>
-            <td>15</td>
-            <td>Dra Laiane</td>
-            <td>Pediatra</td>
-         
+            <th>{{medico.id}}</th>
+            <td>{{medico.crm}}</td>
+            <td>{{medico.nome}}</td>
+            <td>{{medico.especialidade}}</td>
+            <td>{{medico.idade}}</td>
+            
         </tr>
+        {% endfor %}
     </table>
+    <p>Foram encontrados {{medicos | length}} cadastrados!</p>
 
 {% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+ 
+
+      
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Grávida</th>
+            
+        </tr>
+        
+       {% for medicamento in medicamentos %}
+       <tr>
+          <th>{{medicamento.id}}</th>
+           <td>{{medicamento.nome}}</td>
+           <td>{{medicamento.valor}}</td>
+           <td>{{medicamento.gravida}}</td>
+           
+       </tr>
+       {% endfor %}
+    </table>
+    <p>Foram encontrados {{medicamentos| length}} cadastrados!</p>
+
+{% endblock %}
